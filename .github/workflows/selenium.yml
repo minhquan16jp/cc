@@ -41,4 +41,12 @@ jobs:
         sudo Xvfb :10 -ac &
         export DISPLAY=:10
         python crawl_info.py
-
+    
+    - name: Push to GitHub Pages
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git checkout --orphan gh-pages
+        git add output.html
+        git commit -m "Update output.html"
+        git push --force origin gh-pages
