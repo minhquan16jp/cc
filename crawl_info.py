@@ -32,9 +32,9 @@ def crawl_info():
         info = element.text
         print("Nội dung thẻ demo12:", info)
         
-        # Ghi nội dung vào file text
-        with open("output.txt", "w") as f:
-            f.write("Nội dung thẻ demo12: " + info)
+        # Ghi nội dung vào file HTML
+        with open("output.html", "w") as f:
+            f.write(f"<html><body><h1>Nội dung thẻ demo12: {info}</h1></body></html>")
         
     except Exception as e:
         print("Đã xảy ra lỗi:", str(e))
